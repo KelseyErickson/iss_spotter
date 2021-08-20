@@ -36,16 +36,15 @@ const fetchCoordsdByIP = (ip, callback) => {
     }
 
     if (response.statusCode !== 200) {
-      const msg = `Status Code ${response.statusCode} when fetching coordinates for IP. Response: ${body}`;
-      callback(Error(msg), null);
+      callback(Error(`Status Code ${response.statusCode} when fetching coordinates for IP. Response: ${body}`), null);
       return;
     }
 
 
-    const parsedData = JSON.parse(body);
-    const data = { latitude: parsedData.latitude, longitude: parsedData.longitude };
+    const {latitude, longitude} = JSON.parse(body);
+  
 
-    callback(null, data);
+    callback(null, {latitude, longitude});
 
   });
 
