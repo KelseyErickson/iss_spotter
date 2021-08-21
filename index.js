@@ -8,12 +8,12 @@ const printPassTimes = (passTimes) => {
     const datetime = new Date(0);
     datetime.setUTCSeconds(passTime.risetime);
     
-    console.log(`Next pass at ${datetime} for ${passTime.duration} seconds!`)
+    console.log(`Next pass at ${datetime} for ${passTime.duration} seconds!`);
 
   }
 
 
-}
+};
 
 
 nextISSTimesForMyLocation((error, passTimes) => {

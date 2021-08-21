@@ -66,7 +66,7 @@ const fetchISSFlyOverTimes = (coordinates, callback) => {
       return;
     }
 
-    const passes = JSON.parse(body).response
+    const passes = JSON.parse(body).response;
 
     callback(null, passes);
   
@@ -104,18 +104,12 @@ const nextISSTimesForMyLocation = (callback) => {
 
         callback(null, passTimes);
 
-       });
+      });
     
     });
   
   });
 
-
-
-  
-
-
-
-}
+};
 
 module.exports = { nextISSTimesForMyLocation };
